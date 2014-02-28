@@ -1,0 +1,13 @@
+\usepackage{listings}
+\setbeamertemplate{navigation symbols}{}%remove navigation symbols
+
+
+(add-to-list 'org-export-latex-classes
+             '("pres-beamer"
+               "\\documentclass{book}"
+               ("\\part{%s}" . "\\part*{%s}")
+               ("\\chapter{%s}" . "\\chapter*{%s}")
+               ("\\section{%s}" . "\\section*{%s}")
+               ("\\subsection{%s}" . "\\subsection*{%s}")
+               ("\\subsubsection{%s}" . "\\subsubsection*{%s}"))
+             )

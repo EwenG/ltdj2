@@ -15,7 +15,8 @@
 #+XSLT:
 
 #+BEAMER_FRAME_LEVEL: 2
-#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS: pres-beamer
+
 
 * tt
 ** sdf

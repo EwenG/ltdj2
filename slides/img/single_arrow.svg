@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://web.resource.org/cc/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:svg="http://www.w3.org/2000/svg" id="svg1" viewBox="0 0 744.09 1052.4" version="1.0" y="0" x="0">
+  <use id="use1503" xlink:href="#rect899" transform="translate(10 10)" height="1052.3622" width="744.09448" y="0.00000000" x="0.00000000"/>
+  <path id="rect899" stroke-linejoin="round" d="m283.28 141.85l23.41 118.56-240.35-25 0.004 157.93 240.35-25-23.41 111.22 234.66-165.18-234.66-172.53z" fill-rule="evenodd" fill-opacity=".75" stroke="#000" stroke-linecap="round" stroke-width="15" fill="#69f"/>
+  <metadata>
+    <rdf:RDF>
+      <cc:Work>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://creativecommons.org/licenses/publicdomain/"/>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://openclipart.org/">
+            <dc:title>Openclipart</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:title>arrow next</dc:title>
+        <dc:date>2008-02-04T19:14:02</dc:date>
+        <dc:description>arrow, arrow, clip art, clipart, image, interface, interface, media, navigation, navigation, png, public domain, svg, </dc:description>
+        <dc:source>http://openclipart.org/detail/12603/arrow-next-by-anonymous-12603</dc:source>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Anonymous</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>arrow</rdf:li>
+            <rdf:li>clip art</rdf:li>
+            <rdf:li>clipart</rdf:li>
+            <rdf:li>image</rdf:li>
+            <rdf:li>interface</rdf:li>
+            <rdf:li>media</rdf:li>
+            <rdf:li>navigation</rdf:li>
+            <rdf:li>png</rdf:li>
+            <rdf:li>public domain</rdf:li>
+            <rdf:li>svg</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+      </cc:Work>
+      <cc:License rdf:about="http://creativecommons.org/licenses/publicdomain/">
+        <cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"/>
+        <cc:permits rdf:resource="http://creativecommons.org/ns#Distribution"/>
+        <cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+</svg>

@@ -1,0 +1,229 @@
+#+TITLE: Clojure
+#+OPTIONS: H:1
+#+BEAMER_COLOR_THEME:
+#+BEAMER_FONT_THEME:
+#+BEAMER_HEADER:
+#+BEAMER_INNER_THEME:
+#+BEAMER_OUTER_THEME:
+#+BEAMER_THEME: default
+#+LATEX_CLASS: beamer
+#+OPTIONS:   toc:nil
+
+#+STARTUP: beamer
+#+latex_header: \mode<beamer>{\usepackage{pres-beamer}}
+
+* Clojure
+
+ #+ATTR_BEAMER: :overlay +-
+- A lisp
+- That run on the JVM
+- Dynamic
+
+* Clojure syntax
+
+** Line1 							  :B_columns:
+   :PROPERTIES:
+   :BEAMER_env: columns
+   :END:
+
+*** List 						      :B_block:BMCOL:
+   :PROPERTIES:
+   :BEAMER_env: block
+   :BEAMER_col: 0.5
+   :END:
+#+begin_src clojure
+(1 "two" 3)
+#+end_src
+
+#+BEAMER: \pause
+
+*** Vector 						      :B_block:BMCOL:
+   :PROPERTIES:
+   :BEAMER_env: block
+   :BEAMER_col: 0.5
+   :END:
+#+begin_src clojure
+[1 "two" 3]
+#+end_src
+
+#+BEAMER: \pause
+
+** Line2 							  :B_columns:
+   :PROPERTIES:
+   :BEAMER_env: columns
+   :END:
+
+*** Map 						      :B_block:BMCOL:
+   :PROPERTIES:
+   :BEAMER_env: block
+   :BEAMER_col: 0.5
+   :END:
+#+begin_src clojure
+{:first-key 1
+:second-key "two"}
+#+end_src
+
+#+BEAMER: \pause
+
+*** Function definition					      :B_block:BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :BEAMER_env: block
+    :END:
+#+LATEX: \scriptsize
+#+begin_src clojure
+  (defn my-function [param1 param2] 
+    (str param1  param2))
+#+end_src
+
+#+BEAMER: \pause
+
+** Line3 							  :B_columns:
+   :PROPERTIES:
+   :BEAMER_env: columns
+   :END:
+
+*** Function call 					      :B_block:BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :BEAMER_env: block
+    :END:
+#+LATEX: \footnotesize 
+#+begin_src clojure
+(my-function 1 "two") ;"1two"
+#+end_src
+
+
+
+* Clojure syntax
+
+#+LATEX: \center \Huge \textcolor{red}{Code is data, data is code}
+
+* Data structures
+
+#+LATEX: \center \Large Immutable data structures
+
+* Clojurescript
+
+#+LATEX: \center
+#+ATTR_LATEX: :width 0.50\textwidth
+[[./img/javascript_logo_rhino.jpg]]
+
+* React.js
+
+#+LATEX: \center
+#+ATTR_LATEX: :width 0.30\textwidth
+[[./img/react.jpg]]
+
+* React.js
+
+#+LATEX: \tiny
+#+LATEX: \center
+*** 								      :BMCOL:
+   :PROPERTIES:
+   :BEAMER_col: 0.5
+   :END:
+#+begin_src java
+  new Component(){
+      private String localState;
+  
+      private void componentWillMount(){
+          //Setup
+      }
+      private void componentWillUnmount(){
+          //TearDown
+      }
+      private void renderState(){
+          return <input type="text" value={localState}/>;
+      }
+  }
+#+end_src
+
+* core.async
+
+
+#+begin_src clojure
+  (go (>! channel {:name "event" :value 3}))
+#+end_src
+
+#+begin_src clojure
+  (go (<! channel))
+#+end_src
+
+* core.async
+
+#+ATTR_BEAMER: :overlay +-
+- Event driven
+- Pub/Sub
+- Multithreading
+
+* core.async
+
+** Event driven
+
+*** 								  :B_columns:
+    :PROPERTIES:
+    :BEAMER_env: columns
+    :END:
+
+*** 							     :B_column:BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :BEAMER_env: column
+    :END:
+#+LATEX: \scriptsize
+#+begin_src js
+  async_call(param, function(result){
+     console.log(result);
+  });
+#+end_src
+
+#+BEAMER: \pause
+
+*** 							     :B_column:BMCOL:
+    :PROPERTIES:
+    :BEAMER_env: column
+    :BEAMER_col: 0.5
+    :END:
+#+LATEX: \footnotesize
+#+begin_src js
+  async_call(param, new Future());
+#+end_src
+
+#+BEAMER: \pause
+
+*** 								    :B_block:
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
+
+#+LATEX: \footnotesize
+#+begin_src js
+  async_call(param, channel);
+#+end_src
+
+* core.async
+
+** Pub/Sub
+
+\begin{figure}[H]
+   \centering
+   \input{./img/pubsub.pdf_tex}
+\end{figure}
+
+* core.async
+
+** Pub/Sub
+
+\begin{figure}[H]
+    \centering
+    \input{./img/pubsub_chan.pdf_tex}
+\end{figure}
+
+* Next
+
+#+ATTR_BEAMER: :overlay +-
+- Web server
+- core.typed
+- Datomic?
+								    

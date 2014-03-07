@@ -8,9 +8,9 @@
                  [org.clojure/core.async "0.1.278.0-76b25b-alpha"]
                  [domina "1.0.2"]
                  [om "0.5.0"]
-                 [compojure "1.1.3"]
-                 [ring-serve "0.1.2"]
-                 [ring/ring-devel "1.1.6" :scope "test"]
-                 [ring/ring-core "1.1.6"]
                  [sablono "0.2.6"]
-                 [ewen/dragdrop "0.1.0-SNAPSHOT"]])
+                 [ewen/dragdrop "0.1.0-SNAPSHOT"]
+                 [org.clojure/core.typed "0.2.34"]
+                 [io.pedestal/pedestal.service "0.2.2"]
+                 [io.pedestal/pedestal.service-tools "0.2.2"]
+                 [javax.servlet/javax.servlet-api "3.1.0"]])

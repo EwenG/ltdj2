@@ -18,7 +18,8 @@
 - A lisp
 - That run on the JVM
 - Dynamic
-
+- Functional programming
+  
 * Clojure syntax
 
 ** Line1 							  :B_columns:
@@ -141,6 +142,7 @@
 
 * core.async
 
+#+BEAMER: \pause
 
 #+begin_src clojure
   (go (>! channel {:name "event" :value 3}))

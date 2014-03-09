@@ -15,7 +15,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="pubsub_chan.svg">
+   sodipodi:docname="single_arrow.svg">
   <defs
      id="defs4">
     <linearGradient
@@ -96,7 +96,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -160,26 +160,26 @@
     </g>
     <text
        xml:space="preserve"
-       style="font-size:12.62443541999999930px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:ABeeZee;-inkscape-font-specification:ABeeZee"
-       x="19.470783"
+       style="font-size:12.62443542px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:ABeeZee;-inkscape-font-specification:ABeeZee"
+       x="1.4707832"
        y="168.56744"
        id="text3078"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3080"
-         x="19.470783"
-         y="168.56744">Publish</tspan></text>
+         x="1.4707832"
+         y="168.56744">Thread pool</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:12.62443541999999930px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:ABeeZee;-inkscape-font-specification:ABeeZee"
-       x="119.91835"
+       style="font-size:12.62443542px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:ABeeZee;-inkscape-font-specification:ABeeZee"
+       x="109.91835"
        y="168.28279"
        id="text3078-9"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3080-6"
-         x="119.91835"
-         y="168.28279">Subscribe</tspan></text>
+         x="109.91835"
+         y="168.28279">Thread pool</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:40px;font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:URW Chancery L;-inkscape-font-specification:URW Chancery L Bold Italic"

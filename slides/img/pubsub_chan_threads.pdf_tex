@@ -1,6 +1,6 @@
 %% Creator: Inkscape inkscape 0.48.4, www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
-%% Accompanies image file 'pubsub_chan.pdf' (pdf, eps, ps)
+%% Accompanies image file 'pubsub_chan_threads.pdf' (pdf, eps, ps)
 %%
 %% To include the image in your LaTeX document, write
 %%   \input{<filename>.pdf_tex}
@@ -49,9 +49,9 @@
   \global\let\svgscale\undefined%
   \makeatother%
   \begin{picture}(1,0.68325144)%
-    \put(0,0){\includegraphics[width=\unitlength]{img/pubsub_chan.pdf}}%
-    \put(-0.00328524,0.00430209){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Publish}}}%
-    \put(0.70318368,0.00630411){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Subscribe}}}%
+    \put(0,0){\includegraphics[width=\unitlength]{img/pubsub_chan_threads.pdf}}%
+    \put(-0.12988303,0.00430209){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Thread pool}}}%
+    \put(0.63285157,0.00630411){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Thread pool}}}%
     \put(0.34297743,0.50129605){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Channel}}}%
   \end{picture}%
 \endgroup%

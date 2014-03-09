@@ -1,46 +1,28 @@
 (ns service
-    (:require [io.pedestal.service.http :as bootstrap]
-              [io.pedestal.service.http.route :as route]
-              [io.pedestal.service.http.body-params :as body-params]
-              [io.pedestal.service.http.route.definition :refer [defroutes]]
-              [ring.util.response :as ring-resp]))
+  (:require [io.pedestal.service.http :as bootstrap]
+            [io.pedestal.service.http.route :as route]
+            [io.pedestal.service.http.body-params :as body-params]
+            [io.pedestal.service.http.route.definition :refer [defroutes]]
+            [ring.util.response :as ring-resp]
+            [clojure.core.async :as async]))
 
-(defn about-page
-  [request]
-  (ring-resp/response (format "Clojure %s - served from %s"
-                              (clojure-version)
-                              (route/url-for ::about-page))))
+(def rr (async/chan))
 
-(defn addi [o]
-  (str o "re"))
+(async/go (async/put! rr 2))
+(async/close! rr)
+
+(async/go-loop []
+         (when-let [val (async/<! rr)]
+           (prn val)
+           (recur)))
 
 (defn home-page
   [request]
-  (ring-resp/response (str "Hello World!" (addi "eg"))))
+  (ring-resp/response "Hello World2!"))
 
 (defroutes routes
-  [[["/" {:get home-page}
-     ;; Set default interceptors for /about and any other paths under /
-     ^:interceptors [(body-params/body-params) bootstrap/html-body]
-     ["/about" {:get about-page}]]]])
+           [[["/" {:get home-page}]]])
 
-;; Consumed by peddy.server/create-server
-;; See bootstrap/default-interceptors for additional options you can configure
-(def service {:env :dev
-              ;; You can bring your own non-default interceptors. Make
-              ;; sure you include routing and set it up right for
-              ;; dev-mode. If you do, many other keys for configuring
-              ;; default interceptors will be ignored.
-              ;; :bootstrap/interceptors []
-              ::bootstrap/routes routes
-
-              ;; Uncomment next line to enable CORS support, add
-              ;; string(s) specifying scheme, host and port for
-              ;; allowed source(s):
-              ;;
-              ;; "http://localhost:8080"
-              ;;
-              ;;::bootstrap/allowed-origins ["scheme://host:port"]
-
-              ;; Root for resource interceptor that is available by default.
+(def service {::bootstrap/routes        #(deref #'routes)
               ::bootstrap/resource-path "/public"})
+

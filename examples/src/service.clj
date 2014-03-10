@@ -3,8 +3,8 @@
             [io.pedestal.service.http.route :as route]
             [io.pedestal.service.http.body-params :as body-params]
             [io.pedestal.service.http.route.definition :refer [defroutes]]
-            [ring.util.response :as ring-resp]
-            [clojure.core.async :as async]))
+            [ring.util.response :as ring-resp]))
+
 
 (def rr (async/chan))
 
@@ -18,7 +18,7 @@
 
 (defn home-page
   [request]
-  (ring-resp/response "Hello World2!"))
+  (ring-resp/response "Hello World!"))
 
 (defroutes routes
            [[["/" {:get home-page}]]])

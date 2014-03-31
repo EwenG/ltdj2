@@ -1,0 +1,380 @@
+#+TITLE: Clojure
+#+OPTIONS: H:1
+#+BEAMER_COLOR_THEME:
+#+BEAMER_FONT_THEME:
+#+BEAMER_HEADER:
+#+BEAMER_INNER_THEME:
+#+BEAMER_OUTER_THEME:
+#+BEAMER_THEME: default
+#+LATEX_CLASS: beamer
+#+OPTIONS:   toc:nil
+
+#+STARTUP: beamer
+#+latex_header: \mode<beamer>{\usepackage{pres-beamer}}
+
+
+
+
+# https://github.com/antlr/grammars-v4
+
+* Clojure
+
+ #+ATTR_BEAMER: :overlay +-
+- A lisp
+- That run on the JVM
+- Dynamic
+- Functional programming
+  
+* Clojure syntax
+
+** Line1 							  :B_columns:
+   :PROPERTIES:
+   :BEAMER_env: columns
+   :END:
+
+*** List 						      :B_block:BMCOL:
+   :PROPERTIES:
+   :BEAMER_env: block
+   :BEAMER_col: 0.5
+   :END:
+#+begin_src clojure
+(1 "two" 3)
+#+end_src
+
+#+BEAMER: \pause
+
+*** Vector 						      :B_block:BMCOL:
+   :PROPERTIES:
+   :BEAMER_env: block
+   :BEAMER_col: 0.5
+   :END:
+#+begin_src clojure
+[1 "two" 3]
+#+end_src
+
+#+BEAMER: \pause
+
+** Line2 							  :B_columns:
+   :PROPERTIES:
+   :BEAMER_env: columns
+   :END:
+
+*** Map 						      :B_block:BMCOL:
+   :PROPERTIES:
+   :BEAMER_env: block
+   :BEAMER_col: 0.5
+   :END:
+#+begin_src clojure
+{:first-key 1
+:second-key "two"}
+#+end_src
+
+#+BEAMER: \pause
+
+*** Function definition					      :B_block:BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :BEAMER_env: block
+    :END:
+#+LATEX: \scriptsize
+#+begin_src clojure
+  (defn my-function [param1 param2] 
+    (str param1  param2))
+#+end_src
+
+#+BEAMER: \pause
+
+** Line3 							  :B_columns:
+   :PROPERTIES:
+   :BEAMER_env: columns
+   :END:
+
+*** Function call 					      :B_block:BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :BEAMER_env: block
+    :END:
+#+LATEX: \footnotesize 
+#+begin_src clojure
+(my-function 1 "two") ;"1two"
+#+end_src
+
+
+* Clojure syntax
+
+#+LATEX: \center \Huge \textcolor{red}{Code is data, data is code}
+
+
+
+* Data structures
+
+#+LATEX: \center \Large Immutable data structures
+
+
+
+* Clojurescript
+
+#+LATEX: \center
+#+ATTR_LATEX: :width 0.50\textwidth
+[[./img/javascript_logo_rhino.jpg]]
+
+
+
+# * React.js
+
+# #+LATEX: \center
+# #+ATTR_LATEX: :width 0.30\textwidth
+# [[./img/react.jpg]]
+
+# * React.js
+
+# #+LATEX: \tiny
+# #+LATEX: \center
+# *** 								      :BMCOL:
+#    :PROPERTIES:
+#    :BEAMER_col: 0.5
+#    :END:
+# #+begin_src java
+#   new Component(){
+#       private String localState;
+  
+#       private void componentWillMount(){
+#           //Setup
+#       }
+#       private void componentWillUnmount(){
+#           //TearDown
+#       }
+#       private void renderState(){
+#           return <input type="text" value={localState}/>;
+#       }
+#   }
+# #+end_src
+
+
+
+* core.async
+
+#+ATTR_BEAMER: :overlay +-
+- Communicating sequential processes (CSP) ... Go
+- Asynchronous, reactive, event-driven ... multithreaded
+- Channel $\simeq$ Queues
+- Clojure + Clojurescript
+
+
+*** Note							   :B_noteNH:
+    :PROPERTIES:
+    :BEAMER_env: noteNH
+    :END:
+Core.async = CSP = Communication Sequential process = GO-like = Thanks metaprogramming
+Compare core.async to other way of developing (callbacks ...)
+Multithreaded -> Thanks immutable datastructures
+Rich semantic, synchronous, non-blocking, asynchronous, buffers
+
+* core.async
+#+begin_src clojure
+  (go (>! channel {:name "event" :value 3}))
+#+end_src
+
+#+begin_src clojure
+  (go (<! channel))
+#+end_src
+
+* core.async
+
+** Asynchronous
+
+*** 								  :B_columns:
+    :PROPERTIES:
+    :BEAMER_env: columns
+    :END:
+
+*** 							     :B_column:BMCOL:
+    :PROPERTIES:
+    :BEAMER_col: 0.5
+    :BEAMER_env: column
+    :END:
+#+LATEX: \scriptsize
+#+begin_src js
+  async_call(param, function(result){
+     console.log(result);
+  });
+#+end_src
+
+#+BEAMER: \pause
+
+*** 							     :B_column:BMCOL:
+    :PROPERTIES:
+    :BEAMER_env: column
+    :BEAMER_col: 0.5
+    :END:
+#+LATEX: \footnotesize
+#+begin_src js
+  async_call(param, new Future());
+#+end_src
+
+#+BEAMER: \pause
+
+*** 								    :B_block:
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
+
+#+LATEX: \footnotesize
+#+begin_src js
+  async_call(param, channel);
+#+end_src
+
+* core.async
+
+** Pub/Sub
+
+\begin{figure}[H]
+   \centering
+   \input{./img/pubsub.pdf_tex}
+\end{figure}
+
+*** Note							   :B_noteNH:
+    :PROPERTIES:
+    :BEAMER_env: noteNH
+    :END:
+Pub/Sub -> channel -> first-class -> IDE support ...
+Composable
+Pub/Sub for client side, Pub/Sub for server side
+
+
+* core.async
+
+** Pub/Sub
+
+\begin{figure}[H]
+    \centering
+    \input{./img/pubsub_chan.pdf_tex}
+\end{figure}
+
+
+* core.async
+
+** Composable
+
+#+ATTR_BEAMER: :overlay +-
+- map
+- filter
+- merge
+- choose
+
+* core.async
+
+** Pub/Sub
+
+\begin{figure}[H]
+   \centering
+   \input{./img/pubsub_chan.pdf_tex}
+\end{figure}
+
+* core.async
+
+** Pub/Sub
+
+\begin{figure}[H]
+   \centering
+   \input{./img/pubsub_chan_threads.pdf_tex}
+\end{figure}
+
+* core.async
+
+** Pub/Sub
+
+\begin{figure}[H]
+   \centering
+   \input{./img/pubsub_chan_threads_semantics.pdf_tex}
+\end{figure}
+
+* core.async
+
+** Pub/Sub
+
+\begin{figure}[H]
+   \centering
+   \input{./img/pubsub_chan_threads_semantics_buffers.pdf_tex}
+\end{figure}
+
+
+
+* core.typed
+
+** Static typing 					      :B_block:BMCOL:
+   :PROPERTIES:
+   :BEAMER_col: 0.5
+   :BEAMER_env: block
+   :END:
+#+ATTR_BEAMER: :overlay +-
+- Early error catching
+- Documentation by types
+- Faster
+
+#+BEAMER: \pause
+
+** Dynamic typing 					      :B_block:BMCOL:
+   :PROPERTIES:
+   :BEAMER_col: 0.5
+   :BEAMER_env: block
+   :END:
+#+ATTR_BEAMER: :overlay +-
+- Duck typing $\Rightarrow$ better code reuse
+- Live programming
+- Compilation speed / compiler complexity
+
+* core.typed
+
+
+- Optional type system
+
+#+BEAMER: \pause
+
+** No more beans						    :B_block:
+   :PROPERTIES:
+   :BEAMER_env: block
+   :END:
+#+begin_src clojure
+(HMap :mandatory {:a Number} :optional {:b Symbol})
+#+end_src
+
+#+BEAMER: \pause
+
+** Union types							    :B_block:
+   :PROPERTIES:
+   :BEAMER_env: block
+   :END:
+#+begin_src clojure
+(Fn [(U String Number) -> (Value 3)])
+#+end_src
+
+** Notes							     :B_note:
+   :PROPERTIES:
+   :BEAMER_env: note
+   :END:
+No more null pointer exception
+IDE integration --
+Clojurescript support --
+
+* Immutant
+
+#+ATTR_BEAMER: :overlay +-
+- JBoss
+- Standard deployment
+- Logs
+- Jobs / Daemons
+- Messaging (HornetQ)
+- Caching (Infinispan)
+- Distributed transactions
+- Clustering
+- \textcolor{red}{REPL}
+
+* Wrap up
+
+#+ATTR_BEAMER: :overlay +-
+- Lisp is great
+- Asynchronous / multithread $\Rightarrow$ core.async
+- Type checking $\Rightarrow$ core.typed
+- Application server $\Rightarrow$ Immutant
+								    

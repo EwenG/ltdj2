@@ -1,0 +1,51 @@
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{./img/bg.jpg}}
+\setbeamertemplate{navigation symbols}{}%remove navigation symbols
+
+%%%%Colors%%%%%
+\definecolor{textcolour}{rgb}{1,1,1}
+\definecolor{titlecolor}{rgb}{0.02,0.15,0.41}
+\definecolor{headcolor}{rgb}{0.18,0.45,0.03}
+\setbeamercolor{title}{fg=titlecolor}
+\setbeamercolor{frametitle}{fg=titlecolor}
+\setbeamercolor{structure}{fg=textcolour}
+\setbeamerfont{title}{size = \Huge}
+\setbeamerfont{frametitle}{size = \Huge}
+\setbeamercolor{local structure}{fg=headcolor}
+%\setbeamercolor{normal text}{fg=textcolour}
+\setbeamercolor{block title}{fg=headcolor}
+
+\usepackage{fontspec}
+\setmainfont{ABeeZee}
+
+
+\definecolor{minted-bg-color}{rgb}{1,1,1} 
+
+
+\defbeamertemplate*{title page}{customized}[1][]
+{
+\begin{centering}
+  \usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle\par
+\end{centering}
+\begin{center}
+  \includegraphics[width=100pt]{img/clojure-logo}
+\end{center}
+}
+\setbeamertemplate{frametitle} 
+{ 
+\vspace{0.3cm}
+\begin{centering} 
+\insertframetitle\par
+\end{centering} 
+} 
+
+
+\setbeamertemplate{block begin}{
+  \begin{center} \usebeamercolor[fg]{block title}\insertblocktitle \end{center}
+}
+\setbeamertemplate{block end}{
+}
+
+\usemintedstyle{default}
+
+
+\usepackage{import}

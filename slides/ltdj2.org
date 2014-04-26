@@ -108,7 +108,7 @@
 
 * Data structures
 
-#+LATEX: \center \Large Immutable data structures
+#+LATEX: \center \Large Persistent data structures
 
 
 

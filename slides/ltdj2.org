@@ -322,7 +322,7 @@ Pub/Sub for client side, Pub/Sub for server side
 #+ATTR_BEAMER: :overlay +-
 - Duck typing $\Rightarrow$ better code reuse
 - Live programming
-- Compilation speed / compiler complexity
+- Compiler complexity
 
 * core.typed
 

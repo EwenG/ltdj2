@@ -13,6 +13,10 @@
 #+latex_header: \mode<beamer>{\usepackage{pres-beamer}}
 
 
+# (setq org-latex-pdf-process
+#      '("xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
+
+
 
 
 # https://github.com/antlr/grammars-v4
